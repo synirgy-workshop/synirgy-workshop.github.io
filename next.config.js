@@ -2,7 +2,7 @@
 // Update this to match your GitHub repository name
 // If your repo is at the root (username.github.io), set to ''
 // Otherwise, set to '/your-repo-name'
-const repoName = ''
+const repoName = '/synirgy-workshop.github.io'
 
 const nextConfig = {
   output: 'export',
