@@ -9,6 +9,8 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './imageLoader.js',
   },
   basePath: process.env.NODE_ENV === 'production' ? repoName : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? repoName : '',

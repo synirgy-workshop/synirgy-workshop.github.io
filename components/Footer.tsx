@@ -67,9 +67,6 @@ const Footer = () => {
           <p>
             &copy; {currentYear} SynIRgy Workshop. All rights reserved.
           </p>
-          <p className="text-xs">
-            Built with Next.js and shadcn/ui
-          </p>
         </div>
       </div>
     </footer>
