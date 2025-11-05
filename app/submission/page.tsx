@@ -70,7 +70,7 @@ export default function Submission() {
               <li>• At least one author of accepted papers must register for ECIR 2026 and the workshop</li>
             </ul>
           </AnimatedCard>
-          <div className="mt-8 p-6 rounded-xl border border-primary/50 bg-primary/5">
+          <div className="mt-8 p-6 rounded-xl border border-primary bg-primary/5">
             <div className="flex items-start gap-4">
               <AlertCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
               <div>

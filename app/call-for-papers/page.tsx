@@ -171,7 +171,7 @@ export default function CallForPapers() {
             ))}
           </div>
 
-          <div className="mt-8 p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
+          <div className="mt-8 p-6 rounded-lg border border-border bg-card">
             <p className="text-sm text-muted-foreground">
               <strong>Note:</strong> Page limits exclude references. All submissions should follow the
               CEUR Workshop Proceedings format.

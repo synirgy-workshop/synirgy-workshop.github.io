@@ -102,7 +102,7 @@ export default function ImportantDates() {
 
                     {/* Right side */}
                     <div className={`${isEven ? 'md:col-start-2' : ''}`}>
-                      <div className="p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm">
+                      <div className="p-6 rounded-xl border border-border bg-card">
                         <div className="flex items-start gap-4 md:hidden mb-4">
                           <div className="p-3 rounded-lg bg-primary/10 text-primary">
                             <Icon className="h-6 w-6" />
@@ -127,7 +127,7 @@ export default function ImportantDates() {
           </SectionHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm">
+            <div className="p-6 rounded-xl border border-border bg-card">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-primary" />
                 Submission System
@@ -144,7 +144,7 @@ export default function ImportantDates() {
               </Link>
             </div>
 
-            <div className="p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm">
+            <div className="p-6 rounded-xl border border-border bg-card">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <Bell className="h-5 w-5 text-primary" />
                 Stay Updated
@@ -162,7 +162,7 @@ export default function ImportantDates() {
             </div>
           </div>
 
-          <div className="mt-8 p-6 rounded-xl border border-primary/50 bg-primary/5">
+          <div className="mt-8 p-6 rounded-xl border border-primary bg-primary/5">
             <div className="flex items-start gap-4">
               <FileCheck className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
               <div>

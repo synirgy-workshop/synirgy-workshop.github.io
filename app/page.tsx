@@ -46,7 +46,7 @@ export default function Home() {
           <div className="text-center space-y-8">
             <div className="space-y-4">
               <div>
-                <Badge variant="default" className="text-base px-6 py-2 mb-6 bg-primary text-primary-foreground border-2 border-primary font-bold">
+                <Badge variant="default" className="text-base px-6 py-2 mb-6 bg-primary text-primary-foreground border border-primary font-bold">
                   ECIR 2026 Workshop
                 </Badge>
               </div>
@@ -78,13 +78,13 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-6 justify-center pt-8">
-              <Button asChild size="lg" className="text-lg px-8 py-6 border-2 border-primary">
+              <Button asChild size="lg" className="text-lg px-8 py-6 border border-primary">
                 <Link href="/call-for-papers">
                   <FileText className="mr-2 h-6 w-6" />
                   Call for Papers
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-border hover:border-primary">
+              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border border-border hover:border-primary">
                 <Link href="/submission">
                   Submit Your Work
                 </Link>
@@ -142,7 +142,7 @@ export default function Home() {
             <AnimatedCard title="Topics of Interest">
               <div className="flex flex-wrap gap-2">
                 {topics.map((topic, index) => (
-                  <Badge key={index} variant="secondary" className="text-sm border-2 border-border bg-secondary text-foreground">
+                  <Badge key={index} variant="secondary" className="text-sm border border-border bg-secondary text-foreground">
                     {topic}
                   </Badge>
                 ))}
@@ -154,7 +154,7 @@ export default function Home() {
                 <p className="text-foreground">
                   All participants must register for ECIR 2026 to attend the workshop.
                 </p>
-                <Button asChild variant="outline" className="w-full text-base py-3 border-2 border-border hover:border-primary">
+                <Button asChild variant="outline" className="w-full text-base py-3 border border-border hover:border-primary">
                   <a href="https://ecir2026.eu/" target="_blank" rel="noopener noreferrer">
                     View Conference Details
                   </a>
@@ -177,13 +177,13 @@ export default function Home() {
               and synthetic data in Information Retrieval
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
-              <Button asChild size="lg" className="text-lg px-8 py-6 border-2 border-primary">
+              <Button asChild size="lg" className="text-lg px-8 py-6 border border-primary">
                 <Link href="/submission">
                   <FileText className="mr-2 h-6 w-6" />
                   Submit a Paper
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-border hover:border-primary">
+              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border border-border hover:border-primary">
                 <Link href="/important-dates">
                   <Calendar className="mr-2 h-6 w-6" />
                   View Important Dates

@@ -85,7 +85,7 @@ const Navigation = () => {
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "flex items-center px-4 py-3 text-base font-medium transition-colors rounded-md border-2",
+                      "flex items-center px-4 py-3 text-base font-medium transition-colors rounded-md border",
                       pathname === item.href
                         ? "bg-primary text-primary-foreground border-primary font-bold"
                         : "text-foreground border-border hover:border-primary"

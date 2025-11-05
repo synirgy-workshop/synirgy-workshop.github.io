@@ -34,7 +34,7 @@ export default function AcceptedPapers() {
                 Example Format
               </h3>
               <p className="text-muted-foreground">Once papers are accepted, they will be listed in the following format:</p>
-              <div className="mt-4 p-6 rounded-lg border border-border/50 bg-card/50">
+              <div className="mt-4 p-6 rounded-lg border border-border bg-card">
                 <h4 className="text-lg font-semibold mb-2">Paper Title Example</h4>
                 <p className="text-sm text-muted-foreground mb-1"><strong>Authors:</strong> Author 1, Author 2, Author 3</p>
                 <p className="text-sm text-muted-foreground mb-1"><strong>Session:</strong> Session Name</p>
