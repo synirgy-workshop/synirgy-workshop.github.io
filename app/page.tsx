@@ -68,7 +68,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <div className="flex items-center gap-2 text-white font-semibold text-lg">
                 <Calendar className="h-6 w-6 text-blue-400" />
-                <span>Date: TBA</span>
+                <span>Date: 2 April 2026</span>
               </div>
               <div className="hidden sm:block text-blue-400 font-bold">•</div>
               <div className="flex items-center gap-2 text-white font-semibold text-lg">

@@ -10,39 +10,46 @@ import Link from 'next/link'
 export default function ImportantDates() {
   const dates = [
     {
-      date: 'TBA',
+      date: '5 January 2026',
+      event: 'Abstract Submission Deadline',
+      description: 'Submit your paper abstract',
+      icon: FileCheck,
+      color: 'from-blue-900 to-black'
+    },
+    {
+      date: '12 January 2026',
       event: 'Paper Submission Deadline',
       description: 'Submit your full, short, or position paper',
       icon: Calendar,
-      color: 'from-blue-600 to-black'
+      color: 'from-blue-900 to-black'
     },
     {
-      date: 'TBA',
+      date: '13 February 2026',
       event: 'Notification of Acceptance',
       description: 'Authors will be notified of review decisions',
       icon: Bell,
-      color: 'from-blue-500 to-gray-900'
+      color: 'from-blue-900 to-black'
     },
     {
-      date: 'TBA',
+      date: '23 February 2026',
       event: 'Camera-Ready Deadline',
       description: 'Submit final version of accepted papers',
       icon: FileCheck,
-      color: 'from-blue-600 to-black'
+      color: 'from-blue-900 to-black'
     },
     {
-      date: 'TBA',
+      date: '2 April 2026',
       event: 'Workshop Date',
       description: 'SynIRgy Workshop at ECIR 2026',
       icon: Award,
-      color: 'from-blue-500 to-gray-900'
+      color: 'from-blue-900 to-black'
     },
     {
-      date: 'TBA',
+      date: '29 March - 2 April 2026',
       event: 'ECIR 2026 Conference',
       description: 'Main conference dates',
       icon: Users,
-      color: 'from-blue-600 to-black'
+      color: 'from-blue-900 to-black'
     }
   ]
 
@@ -78,14 +85,14 @@ export default function ImportantDates() {
                 return (
                   <div
                     key={index}
-                    className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
+                    className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center ${
                       isEven ? '' : 'md:grid-flow-dense'
                     }`}
                   >
                     {/* Left side */}
                     <div className={`${isEven ? 'md:text-right' : 'md:col-start-2'}`}>
                       <div className="inline-block">
-                        <div className={`text-5xl md:text-6xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                        <div className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                           {item.date}
                         </div>
                       </div>

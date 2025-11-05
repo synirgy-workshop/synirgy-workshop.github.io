@@ -25,15 +25,16 @@ export default function Submission() {
           <SectionHeading>Submission Process</SectionHeading>
           <div className="relative max-w-3xl mx-auto">
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 hidden md:block" />
-            <div className="space-y-8">
+            <div className="space-y-12">
               {steps.map((step, index) => {
                 const Icon = step.icon
+                const isEven = index % 2 === 0
                 return (
-                  <div key={index} className="relative">
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary border-4 border-background flex items-center justify-center text-primary-foreground font-bold hidden md:flex">
+                  <div key={index} className="relative flex items-center">
+                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary border-4 border-background flex items-center justify-center text-primary-foreground font-bold hidden md:flex z-10">
                       {step.number}
                     </div>
-                    <div className={`md:w-5/12 ${index % 2 === 0 ? '' : 'md:ml-auto'}`}>
+                    <div className={`md:w-5/12 ${isEven ? '' : 'md:ml-auto'}`}>
                       <AnimatedCard>
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-lg bg-primary/10 text-primary md:hidden">
@@ -60,11 +61,11 @@ export default function Submission() {
           <AnimatedCard>
             <ul className="space-y-3 text-muted-foreground">
               <li>• All submissions must follow the CEUR Workshop Proceedings format</li>
-              <li>• Full research papers: 6-8 pages (excluding references)</li>
-              <li>• Short papers & work-in-progress: 2-4 pages (excluding references)</li>
-              <li>• Demo papers: 2-4 pages (excluding references)</li>
-              <li>• Negative results papers: 2-4 pages (excluding references)</li>
-              <li>• Position papers (opinion, methodology, or survey): 2-4 pages (excluding references)</li>
+              <li>• Full research papers: 12 pages (excluding references)</li>
+              <li>• Short papers & work-in-progress: 4-6 pages (excluding references)</li>
+              <li>• Demo papers: 5 pages (excluding references)</li>
+              <li>• Negative results papers: 6-8 pages (excluding references)</li>
+              <li>• Position papers (opinion, methodology, or survey): 4-6 pages (excluding references)</li>
               <li>• Papers must be submitted in PDF format</li>
               <li>• All submissions must be in English and anonymized for double-blind review</li>
               <li>• At least one author of accepted papers must register for ECIR 2026 and the workshop</li>

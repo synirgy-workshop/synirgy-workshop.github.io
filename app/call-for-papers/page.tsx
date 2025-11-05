@@ -41,31 +41,31 @@ export default function CallForPapers() {
   const submissionTypes = [
     {
       type: "Full Research Papers",
-      pages: "6-8 pages",
+      pages: "12 pages",
       description: "Presenting completed work with comprehensive evaluation and analysis",
       color: "primary"
     },
     {
       type: "Short Papers & Work-in-Progress",
-      pages: "2-4 pages",
+      pages: "4-6 pages",
       description: "Preliminary results, focused contributions, or ongoing research",
       color: "secondary"
     },
     {
       type: "Demo Papers",
-      pages: "2-4 pages",
+      pages: "5 pages",
       description: "Demonstrations of tools, systems, or interactive applications",
       color: "secondary"
     },
     {
       type: "Negative Results Papers",
-      pages: "2-4 pages",
+      pages: "6-8 pages",
       description: "Reporting unexpected or negative findings that provide valuable insights",
       color: "secondary"
     },
     {
       type: "Position Papers",
-      pages: "2-4 pages",
+      pages: "4-6 pages",
       description: "Opinion papers, research methodology papers, or short survey papers on SynIRgy themes",
       color: "secondary"
     }
