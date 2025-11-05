@@ -15,7 +15,7 @@ export default function PageBanner({ title, description, className }: PageBanner
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/banner-synirgy.png"
+          src="../../banner-synirgy.png"
           alt="SynIRgy Workshop Banner"
           fill
           className="object-cover"
