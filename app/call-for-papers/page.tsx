@@ -1,7 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { FileText, Users, Target, CheckCircle, BookOpen, Lightbulb, Database, Brain, Globe, Zap } from 'lucide-react'
+import { FileText, Users, Target, CheckCircle, BookOpen, Lightbulb, Database } from 'lucide-react'
 import PageBanner from '@/components/PageBanner'
 import SectionHeading from '@/components/SectionHeading'
 import AnimatedCard from '@/components/AnimatedCard'
@@ -13,64 +12,61 @@ import Link from 'next/link'
 export default function CallForPapers() {
   const topics = [
     {
-      icon: Database,
-      title: "Synthetic Data Generation",
-      description: "Methods for creating realistic synthetic datasets, user models, and query logs for IR evaluation"
+      icon: Users,
+      title: "User Behavior & Interaction",
+      description: "Modeling realistic user interactions with LLMs, synthetic user profiles validation, and bridging gaps between simulated and real user behavior"
     },
     {
-      icon: Users,
-      title: "User Simulation",
-      description: "Simulating user behavior, search sessions, and interaction patterns for system evaluation"
+      icon: Database,
+      title: "Synthetic Data Generation",
+      description: "Metrics for similarity assessment, privacy-preserving synthetic datasets, LLM fine-tuning for data generation, and validation for real-world applicability"
     },
     {
       icon: Target,
-      title: "Evaluation Methodologies",
-      description: "Novel metrics, evaluation frameworks, and benchmarking approaches using simulation"
-    },
-    {
-      icon: Brain,
-      title: "LLM-Based Simulation",
-      description: "Using large language models for generating queries, documents, and relevance judgments"
-    },
-    {
-      icon: Lightbulb,
-      title: "Best Practices",
-      description: "Guidelines, lessons learned, and recommendations for simulation in IR research"
-    },
-    {
-      icon: Globe,
-      title: "Real-World Applications",
-      description: "Case studies and deployment experiences using synthetic data and simulation"
-    },
-    {
-      icon: Zap,
-      title: "Efficiency & Scalability",
-      description: "Scalable simulation methods and efficient synthetic data generation techniques"
+      title: "Algorithm Development & Evaluation",
+      description: "Simulation environment requirements, reinforcement learning for interactive systems, RAG pipeline evaluation, and validity of synthetic data for evaluation"
     },
     {
       icon: BookOpen,
-      title: "Ethical Considerations",
-      description: "Privacy, bias, and fairness implications of using synthetic data in IR systems"
+      title: "Bias and Ethics",
+      description: "Using synthetic data to mitigate bias, ethical concerns with LLM-generated data, ensuring diversity in user personas, and preventing bias reinforcement"
+    },
+    {
+      icon: Lightbulb,
+      title: "Reproducibility & Infrastructure",
+      description: "Defining reproducibility in synthetic data, applying FAIR principles, standardization efforts, and open-source tools for scalable simulation environments"
     }
   ]
 
   const submissionTypes = [
     {
-      type: "Full Papers",
-      pages: "8 pages",
+      type: "Full Research Papers",
+      pages: "6-8 pages",
       description: "Presenting completed work with comprehensive evaluation and analysis",
       color: "primary"
     },
     {
-      type: "Short Papers",
-      pages: "4 pages",
-      description: "Work-in-progress, preliminary results, or focused contributions",
+      type: "Short Papers & Work-in-Progress",
+      pages: "2-4 pages",
+      description: "Preliminary results, focused contributions, or ongoing research",
+      color: "secondary"
+    },
+    {
+      type: "Demo Papers",
+      pages: "2-4 pages",
+      description: "Demonstrations of tools, systems, or interactive applications",
+      color: "secondary"
+    },
+    {
+      type: "Negative Results Papers",
+      pages: "2-4 pages",
+      description: "Reporting unexpected or negative findings that provide valuable insights",
       color: "secondary"
     },
     {
       type: "Position Papers",
-      pages: "4 pages",
-      description: "Discussing new ideas, challenges, or future research directions",
+      pages: "2-4 pages",
+      description: "Opinion papers, research methodology papers, or short survey papers on SynIRgy themes",
       color: "secondary"
     }
   ]
@@ -79,9 +75,10 @@ export default function CallForPapers() {
     "Submissions must be written in English",
     "Follow the CEUR Workshop Proceedings format",
     "Submit in PDF format via the workshop submission system",
-    "All papers undergo single-blind peer review",
+    "All papers undergo double-blind peer review by at least two independent reviewers",
     "Page limits exclude references",
-    "At least one author must register and present the paper"
+    "At least one author of each accepted paper must register for ECIR 2026 and the workshop",
+    "Full experiments are not required for position papers, but preliminary results are encouraged"
   ]
 
   return (
@@ -97,24 +94,29 @@ export default function CallForPapers() {
             Workshop Scope
           </SectionHeading>
 
-          <AnimatedCard delay={0.1}>
+          <AnimatedCard>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                The increasing complexity of information access systems necessitates innovative evaluation
-                methods beyond real-world user data, which is often biased, incomplete, or difficult to obtain
-                due to privacy concerns. Simulation and synthetic data methods provide controlled and
-                reproducible environments for training, evaluating, refining, and benchmarking algorithms
-                in information retrieval and personalization.
+                The SynIRgy workshop brings together researchers from information access systems, including search, 
+                LLMs, recommender systems, and related fields. Our goal is to foster community building, establish 
+                a shared vocabulary, and identify key challenges and open problems in synthetic data and simulation 
+                for Information Retrieval.
               </p>
               <p className="text-muted-foreground">
-                This workshop aims to bring together researchers and practitioners to share insights, discuss
-                best practices, and address pressing open problems by exploring synergies in the use of
-                synthetic data and simulation for Information Retrieval.
+                This half-day in-person event is designed to combine high-quality research presentations with 
+                informal networking and focused discussions. The workshop will explore key research questions 
+                around user behavior modeling, synthetic data generation, algorithm evaluation, bias and ethics, 
+                and reproducibility infrastructure.
+              </p>
+              <p className="text-muted-foreground">
+                As a result, a short report will summarize the discussions and outline future directions. These 
+                outcomes will lay the foundation for later editions and potential activities such as tutorials, 
+                survey papers, or a special journal issue.
               </p>
               <div className="flex flex-wrap gap-2 pt-4">
-                <Badge variant="outline">Methodological Advances</Badge>
-                <Badge variant="outline">Ethical Considerations</Badge>
-                <Badge variant="outline">Practical Applications</Badge>
+                <Badge variant="outline">Community Building</Badge>
+                <Badge variant="outline">Research Collaboration</Badge>
+                <Badge variant="outline">Future Directions</Badge>
               </div>
             </div>
           </AnimatedCard>
@@ -127,12 +129,10 @@ export default function CallForPapers() {
             Topics of Interest
           </SectionHeading>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {topics.map((topic, index) => (
               <AnimatedCard
                 key={index}
-                delay={0.1 * (index + 1)}
-                hover3d={true}
               >
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
@@ -157,32 +157,26 @@ export default function CallForPapers() {
             Submission Types
           </SectionHeading>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {submissionTypes.map((item, index) => (
-              <AnimatedCard key={index} delay={0.1 * (index + 1)}>
+              <AnimatedCard key={index}>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-semibold text-xl">{item.type}</h3>
+                    <h3 className="font-semibold text-lg">{item.type}</h3>
                     <Badge>{item.pages}</Badge>
                   </div>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
               </AnimatedCard>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm"
-          >
+          <div className="mt-8 p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
             <p className="text-sm text-muted-foreground">
               <strong>Note:</strong> Page limits exclude references. All submissions should follow the
               CEUR Workshop Proceedings format.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -192,7 +186,7 @@ export default function CallForPapers() {
             Submission Guidelines
           </SectionHeading>
 
-          <AnimatedCard delay={0.1}>
+          <AnimatedCard>
             <ul className="space-y-4">
               {guidelines.map((guideline, index) => (
                 <li key={index} className="flex items-start gap-3">
@@ -203,16 +197,24 @@ export default function CallForPapers() {
             </ul>
           </AnimatedCard>
 
-          <AnimatedCard delay={0.2} className="mt-6">
+          <AnimatedCard className="mt-6">
             <div className="space-y-4">
               <h3 className="font-semibold text-xl flex items-center gap-2">
                 <FileText className="h-5 w-5 text-primary" />
-                Review Process
+                Review Process & Evaluation Criteria
               </h3>
               <p className="text-muted-foreground">
-                All submissions will be reviewed by at least two members of the program committee.
-                Reviews will assess the paper&apos;s contribution, technical quality, clarity, and relevance
-                to the workshop. Accepted papers will be published in the workshop proceedings.
+                We follow a double-blind peer-review process. Each submission will be reviewed by at least two 
+                independent reviewers who are experts in the respective topic. Papers will be evaluated based on:
+              </p>
+              <ul className="space-y-2 text-muted-foreground ml-4">
+                <li>• <strong>Relevance:</strong> Focus on areas related to synthetic data, simulation methods, and IR</li>
+                <li>• <strong>Discussion potential:</strong> Ability to encourage interaction and provide foundation for workshop sessions</li>
+                <li>• <strong>Quality:</strong> Well-structured arguments, clear communication, and appropriate use of language</li>
+              </ul>
+              <p className="text-muted-foreground mt-4">
+                All accepted contributions will be published in CEUR-WS workshop proceedings. Based on interest and 
+                paper quality, we may organize a follow-up special issue in a relevant journal.
               </p>
             </div>
           </AnimatedCard>
@@ -222,13 +224,7 @@ export default function CallForPapers() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-8"
-          >
+          <div className="text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold">
               <span className="text-gradient">Ready to Submit?</span>
             </h2>
@@ -248,7 +244,7 @@ export default function CallForPapers() {
                 </Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

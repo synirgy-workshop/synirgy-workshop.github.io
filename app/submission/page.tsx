@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { FileEdit, FileCheck, Upload, Search, Presentation, AlertCircle } from 'lucide-react'
 import PageBanner from '@/components/PageBanner'
 import SectionHeading from '@/components/SectionHeading'
@@ -13,9 +12,9 @@ export default function Submission() {
   const steps = [
     { number: 1, title: 'Prepare Your Paper', description: 'Write your paper following CEUR format guidelines', icon: FileEdit },
     { number: 2, title: 'Format & Review', description: 'Ensure formatting requirements and page limits are met', icon: FileCheck },
-    { number: 3, title: 'Submit via System', description: 'Upload PDF through the workshop submission portal', icon: Upload },
-    { number: 4, title: 'Peer Review', description: 'Papers reviewed by at least two PC members', icon: Search },
-    { number: 5, title: 'Present at Workshop', description: 'Present accepted papers at the workshop', icon: Presentation }
+    { number: 3, title: 'Submit via System', description: 'Upload PDF through the workshop submission portal (double-blind)', icon: Upload },
+    { number: 4, title: 'Double-Blind Review', description: 'Papers reviewed by at least two independent expert reviewers', icon: Search },
+    { number: 5, title: 'Present at Workshop', description: 'Oral presentations or poster session at the half-day workshop', icon: Presentation }
   ]
 
   return (
@@ -30,12 +29,12 @@ export default function Submission() {
               {steps.map((step, index) => {
                 const Icon = step.icon
                 return (
-                  <motion.div key={index} initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }} className="relative">
+                  <div key={index} className="relative">
                     <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary border-4 border-background flex items-center justify-center text-primary-foreground font-bold hidden md:flex">
                       {step.number}
                     </div>
                     <div className={`md:w-5/12 ${index % 2 === 0 ? '' : 'md:ml-auto'}`}>
-                      <AnimatedCard delay={0.1 * index}>
+                      <AnimatedCard>
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-lg bg-primary/10 text-primary md:hidden">
                             <Icon className="h-6 w-6" />
@@ -48,7 +47,7 @@ export default function Submission() {
                         </div>
                       </AnimatedCard>
                     </div>
-                  </motion.div>
+                  </div>
                 )
               })}
             </div>
@@ -61,14 +60,17 @@ export default function Submission() {
           <AnimatedCard>
             <ul className="space-y-3 text-muted-foreground">
               <li>• All submissions must follow the CEUR Workshop Proceedings format</li>
-              <li>• Full papers: up to 8 pages (excluding references)</li>
-              <li>• Short papers: up to 4 pages (excluding references)</li>
-              <li>• Position papers: up to 4 pages (excluding references)</li>
+              <li>• Full research papers: 6-8 pages (excluding references)</li>
+              <li>• Short papers & work-in-progress: 2-4 pages (excluding references)</li>
+              <li>• Demo papers: 2-4 pages (excluding references)</li>
+              <li>• Negative results papers: 2-4 pages (excluding references)</li>
+              <li>• Position papers (opinion, methodology, or survey): 2-4 pages (excluding references)</li>
               <li>• Papers must be submitted in PDF format</li>
-              <li>• All submissions must be in English</li>
+              <li>• All submissions must be in English and anonymized for double-blind review</li>
+              <li>• At least one author of accepted papers must register for ECIR 2026 and the workshop</li>
             </ul>
           </AnimatedCard>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="mt-8 p-6 rounded-xl border border-primary/50 bg-primary/5">
+          <div className="mt-8 p-6 rounded-xl border border-primary/50 bg-primary/5">
             <div className="flex items-start gap-4">
               <AlertCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
               <div>
@@ -76,12 +78,12 @@ export default function Submission() {
                 <p className="text-sm text-muted-foreground">All submissions must represent original work. Plagiarism and duplicate submissions are strictly prohibited and will result in rejection.</p>
               </div>
             </div>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="mt-8 text-center">
+          </div>
+          <div className="mt-8 text-center">
             <Button size="lg" disabled className="glow-effect">
               Submission System (Coming Soon)
             </Button>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

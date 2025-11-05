@@ -1,6 +1,5 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
 import { Calendar, MapPin, FileText, Users, Target, Presentation } from 'lucide-react'
 import Image from 'next/image'
 import GridOverlay from '@/components/GridOverlay'
@@ -10,17 +9,16 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 
 export default function Home() {
-  const shouldReduceMotion = useReducedMotion()
 
   const topics = [
-    "Neural Information Retrieval",
-    "Search and Recommendation Systems",
-    "Evaluation Metrics and Methodologies",
-    "Multimodal Information Retrieval",
-    "Fairness and Bias in IR",
-    "Explainable AI in Search",
-    "Conversational Search",
-    "Cross-lingual Information Retrieval"
+    "User Behavior & Interaction",
+    "Synthetic Data Generation",
+    "Algorithm Development & Evaluation",
+    "Bias and Ethics",
+    "Reproducibility & Infrastructure",
+    "LLM-Based Simulation",
+    "RAG Pipeline Evaluation",
+    "Privacy-Preserving Synthetic Data"
   ]
 
   return (
@@ -45,22 +43,13 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10 py-20">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
-            className="text-center space-y-8"
-          >
+          <div className="text-center space-y-8">
             <div className="space-y-4">
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: shouldReduceMotion ? 0 : 0.2, duration: shouldReduceMotion ? 0 : 0.4 }}
-              >
+              <div>
                 <Badge variant="default" className="text-base px-6 py-2 mb-6 bg-primary text-primary-foreground border-2 border-primary font-bold">
                   ECIR 2026 Workshop
                 </Badge>
-              </motion.div>
+              </div>
 
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white">
                 SynIRgy
@@ -76,12 +65,7 @@ export default function Home() {
               methods, synergies, and best practices in simulation and synthetic data for IR
             </p>
 
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: shouldReduceMotion ? 0 : 0.4, duration: shouldReduceMotion ? 0 : 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <div className="flex items-center gap-2 text-white font-semibold text-lg">
                 <Calendar className="h-6 w-6 text-blue-400" />
                 <span>Date: TBA</span>
@@ -91,14 +75,9 @@ export default function Home() {
                 <MapPin className="h-6 w-6 text-blue-400" />
                 <span>Location: TBA</span>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: shouldReduceMotion ? 0 : 0.6, duration: shouldReduceMotion ? 0 : 0.4 }}
-              className="flex flex-wrap gap-6 justify-center pt-8"
-            >
+            <div className="flex flex-wrap gap-6 justify-center pt-8">
               <Button asChild size="lg" className="text-lg px-8 py-6 border-2 border-primary">
                 <Link href="/call-for-papers">
                   <FileText className="mr-2 h-6 w-6" />
@@ -110,62 +89,57 @@ export default function Home() {
                   Submit Your Work
                 </Link>
               </Button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Overview Section */}
       <section className="relative py-24 bg-background">
         <div className="container relative z-10">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.4 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Workshop Overview
             </h2>
             <p className="text-xl text-foreground max-w-3xl mx-auto">
               Explore innovative approaches to evaluation beyond real-world user data
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <AnimatedCard delay={shouldReduceMotion ? 0 : 0.1} title="About the Workshop">
+            <AnimatedCard title="About the Workshop">
               <div className="space-y-4">
                 <p className="text-foreground">
-                  The increasing complexity of information access systems necessitates innovative
-                  evaluation methods beyond real-world user data, which is often biased, incomplete,
-                  or difficult to obtain due to privacy concerns.
+                  The SynIRgy workshop brings together researchers from information access systems, including search, 
+                  LLMs, recommender systems, and related fields to explore the synergies between synthetic data and 
+                  simulation for Information Retrieval.
                 </p>
                 <p className="text-foreground">
-                  This workshop provides controlled and reproducible environments for training,
-                  evaluating, refining, and benchmarking algorithms in information retrieval and personalization.
+                  This half-day in-person event combines high-quality research presentations with informal networking 
+                  and focused discussions around synthetic data and simulation in IR, fostering community building 
+                  and establishing a shared vocabulary in this emerging field.
                 </p>
               </div>
             </AnimatedCard>
 
-            <AnimatedCard delay={shouldReduceMotion ? 0 : 0.2} title="Workshop Goals">
+            <AnimatedCard title="Workshop Goals">
               <ul className="space-y-4 text-foreground">
                 <li className="flex items-start gap-3">
-                  <Target className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Share insights and discuss best practices in simulation and synthetic data</span>
+                  <Users className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                  <span>Foster community building and establish a shared vocabulary across information access systems</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Users className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Bring together researchers and practitioners from diverse backgrounds</span>
+                  <Target className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                  <span>Identify key challenges and open problems in synthetic data and simulation for IR</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Presentation className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Produce a report summarizing key discussions and future directions</span>
+                  <span>Produce a report summarizing discussions and outlining future directions for the field</span>
                 </li>
               </ul>
             </AnimatedCard>
 
-            <AnimatedCard delay={shouldReduceMotion ? 0 : 0.3} title="Topics of Interest">
+            <AnimatedCard title="Topics of Interest">
               <div className="flex flex-wrap gap-2">
                 {topics.map((topic, index) => (
                   <Badge key={index} variant="secondary" className="text-sm border-2 border-border bg-secondary text-foreground">
@@ -175,15 +149,15 @@ export default function Home() {
               </div>
             </AnimatedCard>
 
-            <AnimatedCard delay={shouldReduceMotion ? 0 : 0.4} title="Important Notice">
+            <AnimatedCard title="Important Notice">
               <div className="space-y-4">
                 <p className="text-foreground">
                   All participants must register for ECIR 2026 to attend the workshop.
                 </p>
                 <Button asChild variant="outline" className="w-full text-base py-3 border-2 border-border hover:border-primary">
-                  <Link href="/venue">
+                  <a href="https://ecir2026.eu/" target="_blank" rel="noopener noreferrer">
                     View Conference Details
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </AnimatedCard>
@@ -194,13 +168,7 @@ export default function Home() {
       {/* Call to Action */}
       <section className="relative py-24 overflow-hidden bg-secondary/30">
         <div className="container relative z-10">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.4 }}
-            className="text-center space-y-8"
-          >
+          <div className="text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
               Join Us at SynIRgy
             </h2>
@@ -222,7 +190,7 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

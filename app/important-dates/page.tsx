@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Calendar, Bell, FileCheck, Award, Users } from 'lucide-react'
 import PageBanner from '@/components/PageBanner'
 import SectionHeading from '@/components/SectionHeading'

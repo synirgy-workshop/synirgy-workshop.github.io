@@ -22,7 +22,6 @@ const Navigation = () => {
     { href: '/organizers', label: 'Organizers' },
     { href: '/submission', label: 'Submission' },
     { href: '/accepted-papers', label: 'Accepted Papers' },
-    { href: '/venue', label: 'Venue & Contact' },
   ]
 
   return (
