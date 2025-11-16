@@ -82,8 +82,10 @@ export default function Submission() {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <Button size="lg" disabled className="glow-effect">
-              Submission System (Coming Soon)
+            <Button asChild size="lg" className="glow-effect">
+              <Link href="https://easychair.org/conferences?conf=synirgy2026" target="_blank" rel="noopener noreferrer">
+                Submit Your Paper on EasyChair
+              </Link>
             </Button>
           </div>
         </div>

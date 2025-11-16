@@ -10,14 +10,14 @@ import Link from 'next/link'
 export default function ImportantDates() {
   const dates = [
     {
-      date: '5 January 2026',
+      date: '15 January 2026',
       event: 'Abstract Submission Deadline',
       description: 'Submit your paper abstract',
       icon: FileCheck,
       color: 'from-blue-900 to-black'
     },
     {
-      date: '12 January 2026',
+      date: '19 January 2026',
       event: 'Paper Submission Deadline',
       description: 'Submit your full, short, or position paper',
       icon: Calendar,
@@ -140,15 +140,25 @@ export default function ImportantDates() {
                 Submission System
               </h3>
               <p className="text-muted-foreground mb-4">
-                Papers should be submitted through the workshop submission system. The submission link
-                will be available soon.
+                Papers should be submitted through EasyChair. Please review the submission guidelines before submitting.
               </p>
-              <Link
-                href="/submission"
-                className="text-primary hover:underline inline-flex items-center gap-2"
-              >
-                View Submission Guidelines →
-              </Link>
+              <div className="space-y-2">
+                <Link
+                  href="https://easychair.org/conferences?conf=synirgy2026"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline inline-flex items-center gap-2"
+                >
+                  Submit on EasyChair →
+                </Link>
+                <br />
+                <Link
+                  href="/submission"
+                  className="text-primary hover:underline inline-flex items-center gap-2"
+                >
+                  View Submission Guidelines →
+                </Link>
+              </div>
             </div>
 
             <div className="p-6 rounded-xl border border-border bg-card">
