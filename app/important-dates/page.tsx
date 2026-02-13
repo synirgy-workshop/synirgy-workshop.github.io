@@ -24,7 +24,7 @@ export default function ImportantDates() {
       color: 'from-blue-900 to-black'
     },
     {
-      date: '13 February 2026',
+      date: '16 February 2026',
       event: 'Notification of Acceptance',
       description: 'Authors will be notified of review decisions',
       icon: Bell,
