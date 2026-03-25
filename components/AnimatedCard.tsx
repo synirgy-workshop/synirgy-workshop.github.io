@@ -20,7 +20,7 @@ export default function AnimatedCard({
 }: AnimatedCardProps) {
   return (
     <div className={cn("h-full", className)}>
-      <Card className="h-full border border-border bg-card">
+      <Card className="h-full border-0 shadow-none bg-transparent">
         {(title || description) && (
           <CardHeader>
             {title && <CardTitle className="text-2xl">{title}</CardTitle>}

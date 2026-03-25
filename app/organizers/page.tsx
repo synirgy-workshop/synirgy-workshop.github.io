@@ -66,7 +66,12 @@ export default function Organizers() {
   ]
 
   const pc = [
-    'TBA'
+    'Anas Buhyah',
+    'Dominik Kowald',
+    'Roger Zhe Li',
+    'Yuhong Liu',
+    'Savvina Daniil',
+    'Linus W. Dietz'
   ]
 
   return (
@@ -161,7 +166,16 @@ export default function Organizers() {
         <div className="container relative z-10">
           <SectionHeading>Program Committee</SectionHeading>
           <AnimatedCard>
-            <p className="text-muted-foreground italic text-center">Program Committee members to be announced...</p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {pc.map((member, index) => (
+                <li key={index} className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <User className="h-4 w-4 text-primary/50" />
+                  </div>
+                  <span className="font-medium">{member}</span>
+                </li>
+              ))}
+            </ul>
           </AnimatedCard>
         </div>
       </section>
