@@ -11,7 +11,7 @@ import Link from 'next/link'
 export default function Program() {
   const schedule = [
     { time: '13:30 - 13:40', event: 'Opening & Welcome', type: 'opening', icon: Users },
-    { time: '13:40 - 14:25', event: 'Keynote: Dávid Zibriczky', description: '35 min talk + 10 min Q&A', type: 'keynote', icon: Presentation },
+    { time: '13:40 - 14:25', event: 'Keynote: Dr. Dávid Zibriczky', description: 'From Evaluation to Automation: Synthetic Data for RAG Assistants and Semi-Agentic Orchestration - 35 min talk + 10 min Q&A', type: 'keynote', icon: Presentation },
     { time: '14:25 - 14:40', event: 'Presentation: Sami Heikkinen', description: '10 min talk + 2 min Q&A', type: 'presentation', icon: Presentation },
     { time: '14:40 - 14:45', event: '5-Minute Madness', description: '1-minute lightning talk per poster', type: 'poster', icon: Mic },
     { time: '14:45 - 15:00', event: 'Poster Discussion', type: 'poster', icon: MessageSquare },
@@ -98,7 +98,7 @@ export default function Program() {
                       <li><strong>Size:</strong> A0 portrait (841 &times; 1189 mm); A1 also acceptable</li>
                       <li><strong>File:</strong> PDF (single page), print-ready, fonts embedded</li>
                       <li><strong>Images:</strong> 300 dpi recommended</li>
-                      <li><strong>Paper:</strong> Standard matte/satin poster paper (fabric posters may be available — ask the print shop)</li>
+                      <li><strong>Paper:</strong> Standard matte/satin poster paper (fabric posters may be available - ask the print shop)</li>
                     </ul>
                   </div>
                   <div className="space-y-2">

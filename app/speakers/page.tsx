@@ -10,10 +10,11 @@ import GridOverlay from '@/components/GridOverlay'
 export default function Speakers() {
   const speakers = [
     {
-      name: 'Dávid Zibriczky',
-      affiliation: '',
-      title: 'TBA',
-      bio: 'Title and abstract to be announced.',
+      name: 'Dr. Dávid Zibriczky',
+      affiliation: 'Head of Data Science and Cognitive AI, DSV',
+      title: 'From Evaluation to Automation: Synthetic Data for RAG Assistants and Semi-Agentic Orchestration',
+      bio: 'David currently serves as Head of Data Science and Cognitive AI at DSV, the world\'s leading freight forwarding logistics company. He leads global, cross-functional teams building advanced analytics and AI solutions that drive operational excellence and innovation at scale. He holds an M.Sc. in Computer Science and a Ph.D. in Business and Management and brings over 16 years of experience in Data Science and AI, specialized in Recommender Systems and Generative AI. His work spans logistics, travel, healthcare, finance, and tech across both startup and enterprise environments. As a passionate researcher, David has co-authored more than 20 peer-reviewed publications, holds a patent in RecSys, and regularly speaks at international conferences on applied AI and machine learning.',
+      abstract: 'Optimizing conversational AI systems is particularly challenging in early deployment stages, when little or no real user interaction data is available. In this keynote, we address three key design questions for RAG assistants and orchestration services with particular attention to synthetic data generation. First, how can RAG-based assistants be optimized before real conversational data becomes available? Second, is enterprise knowledge better retrieved through one general-purpose assistant or several specialized ones? Third, how should retrieval be orchestrated across assistants in an automated and scalable way? The presentation highlights some real examples during our journey as well as opens additional questions for further discussion during the session.',
       image: '/speakers/david-zibriczky.png'
     }
   ]
@@ -53,6 +54,12 @@ export default function Speakers() {
                     <p className="text-sm text-muted-foreground italic">&ldquo;{speaker.title}&rdquo;</p>
                   </div>
                   <p className="text-muted-foreground">{speaker.bio}</p>
+                  {speaker.abstract && (
+                    <div className="mt-6 text-left">
+                      <h4 className="font-semibold mb-2">Abstract</h4>
+                      <p className="text-muted-foreground text-sm">{speaker.abstract}</p>
+                    </div>
+                  )}
                 </div>
               </AnimatedCard>
             ))}
