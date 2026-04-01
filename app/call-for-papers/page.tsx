@@ -214,7 +214,7 @@ export default function CallForPapers() {
                 <li>• <strong>Quality:</strong> Well-structured arguments, clear communication, and appropriate use of language</li>
               </ul>
               <p className="text-muted-foreground mt-4">
-                All accepted papers are published in the <a href="https://link.springer.com/chapter/10.1007/978-3-032-21324-2_16" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Springer LNCS proceedings</a>.
+                The workshop proceedings are available on <a href="https://link.springer.com/book/10.1007/978-3-032-21324-2" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Springer</a>.
               </p>
             </div>
           </AnimatedCard>

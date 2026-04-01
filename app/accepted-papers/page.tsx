@@ -62,13 +62,13 @@ export default function AcceptedPapers() {
               </a>
               <span className="block mt-3">
                 <a
-                  href="https://link.springer.com/chapter/10.1007/978-3-032-21324-2_16"
+                  href="https://link.springer.com/book/10.1007/978-3-032-21324-2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline inline-flex items-center gap-2 text-lg font-semibold"
                 >
                   <ExternalLink className="h-5 w-5" />
-                  View Proceedings on Springer
+                  View Workshop on Springer
                 </a>
               </span>
             </div>
