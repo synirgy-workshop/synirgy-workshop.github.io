@@ -214,7 +214,7 @@ export default function CallForPapers() {
                 <li>• <strong>Quality:</strong> Well-structured arguments, clear communication, and appropriate use of language</li>
               </ul>
               <p className="text-muted-foreground mt-4">
-                All accepted contributions will be published in Springer LNCS proceedings. Based on interest and
+                All accepted contributions will be published in <a href="https://link.springer.com/chapter/10.1007/978-3-032-21324-2_16" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Springer LNCS proceedings</a>. Based on interest and
                 paper quality, we may organize a follow-up special issue in a relevant journal.
               </p>
             </div>

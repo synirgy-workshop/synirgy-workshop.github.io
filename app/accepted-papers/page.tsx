@@ -60,6 +60,17 @@ export default function AcceptedPapers() {
                 <ExternalLink className="h-5 w-5" />
                 Access Papers on Google Drive
               </a>
+              <span className="block mt-3">
+                <a
+                  href="https://link.springer.com/chapter/10.1007/978-3-032-21324-2_16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline inline-flex items-center gap-2 text-lg font-semibold"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                  View Proceedings on Springer
+                </a>
+              </span>
             </div>
           </AnimatedCard>
         </div>
