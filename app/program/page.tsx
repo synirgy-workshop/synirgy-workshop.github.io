@@ -46,7 +46,7 @@ export default function Program() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-primary" />
-              <span className="font-medium">Room H3SO4</span>
+              <span className="font-medium">Room H3SO3</span>
             </div>
           </div>
 
