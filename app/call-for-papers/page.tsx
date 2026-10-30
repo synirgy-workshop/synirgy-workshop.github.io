@@ -1,252 +1,155 @@
-'use client'
-
-import { FileText, Users, Target, CheckCircle, BookOpen, Lightbulb, Database } from 'lucide-react'
+import Link from 'next/link'
 import PageBanner from '@/components/PageBanner'
 import SectionHeading from '@/components/SectionHeading'
-import AnimatedCard from '@/components/AnimatedCard'
-import GridOverlay from '@/components/GridOverlay'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import Link from 'next/link'
+import { CONFERENCE_NAME } from '@/lib/conference'
 
 export default function CallForPapers() {
   const topics = [
-    {
-      icon: Users,
-      title: "User Behavior & Interaction",
-      description: "Modeling realistic user interactions with LLMs, synthetic user profiles validation, and bridging gaps between simulated and real user behavior"
-    },
-    {
-      icon: Database,
-      title: "Synthetic Data Generation",
-      description: "Metrics for similarity assessment, privacy-preserving synthetic datasets, LLM fine-tuning for data generation, and validation for real-world applicability"
-    },
-    {
-      icon: Target,
-      title: "Algorithm Development & Evaluation",
-      description: "Simulation environment requirements, reinforcement learning for interactive systems, RAG pipeline evaluation, and validity of synthetic data for evaluation"
-    },
-    {
-      icon: BookOpen,
-      title: "Bias and Ethics",
-      description: "Using synthetic data to mitigate bias, ethical concerns with LLM-generated data, ensuring diversity in user personas, and preventing bias reinforcement"
-    },
-    {
-      icon: Lightbulb,
-      title: "Reproducibility & Infrastructure",
-      description: "Defining reproducibility in synthetic data, applying FAIR principles, standardization efforts, and open-source tools for scalable simulation environments"
-    }
+    { title: 'Users and interaction', description: 'Simulated users and synthetic profiles, LLM-based simulators, and checking them against real behaviour' },
+    { title: 'Creating synthetic data', description: 'Ways to measure how close synthetic data is to real data, privacy–utility trade-offs, and using or adapting LLMs as generators' },
+    { title: 'Developing and evaluating algorithms', description: 'What a simulation environment needs to offer, reinforcement learning in interactive settings, and how to simulate and benchmark RAG pipelines' },
+    { title: 'Bias and ethics', description: 'Reducing and avoiding bias, transparency and accountability, misuse, and diverse, inclusive personas' },
+    { title: 'Reproducibility and tooling', description: 'What reproducibility means for simulations, standards for comparison, FAIR practices, and open-source infrastructure' },
   ]
 
   const submissionTypes = [
-    {
-      type: "Full Research Papers",
-      pages: "12 pages",
-      description: "Presenting completed work with comprehensive evaluation and analysis",
-      color: "primary"
-    },
-    {
-      type: "Short Papers & Work-in-Progress",
-      pages: "4-6 pages",
-      description: "Preliminary results, focused contributions, or ongoing research",
-      color: "secondary"
-    },
-    {
-      type: "Demo Papers",
-      pages: "5 pages",
-      description: "Demonstrations of tools, systems, or interactive applications",
-      color: "secondary"
-    },
-    {
-      type: "Negative Results Papers",
-      pages: "6-8 pages",
-      description: "Reporting unexpected or negative findings that provide valuable insights",
-      color: "secondary"
-    },
-    {
-      type: "Position Papers",
-      pages: "4-6 pages",
-      description: "Opinion papers, research methodology papers, or short survey papers on SynIRgy themes",
-      color: "secondary"
-    }
+    { type: 'Long papers', pages: '6-8 pages' },
+    { type: 'Short or work-in-progress papers', pages: '2-4 pages' },
+    { type: 'Demos' },
+    { type: 'Reports of negative results' },
+    { type: 'Position papers', description: 'Opinion pieces, methodology proposals, or brief surveys' },
+  ]
+
+  const tracks = [
+    { title: 'Search, Recommendation, and Retrieval-Augmented AI', description: 'Simulated users and synthetic data for training and evaluating search, recommender, and RAG systems' },
+    { title: 'Evaluation, Human Computation, and Resources', description: 'Reproducible evaluation methods, simulation as a complement to studies with human participants, and shared datasets, tools, and benchmarks' },
+    { title: 'Security and Privacy', description: 'Synthetic data as an alternative to sharing real user data, and the privacy risks of generated data' },
   ]
 
   const guidelines = [
-    "Submissions must be written in English",
-    "Follow the Springer LNCS format",
-    "Submit in PDF format via the workshop submission system",
-    "All papers undergo double-blind peer review by at least two independent reviewers",
-    "Page limits exclude references",
-    "At least one author of each accepted paper must register for ECIR 2026 and the workshop",
-    "Each accepted paper must be presented by at least one of its authors at the workshop",
-    "Full experiments are not required for position papers, but preliminary results are encouraged"
+    'Submissions must be written in English',
+    'Paper template: to be announced',
+    'Submit in PDF format via the workshop submission system',
+    `At least one author of each accepted paper must register for ${CONFERENCE_NAME} and the workshop`,
+    'Each accepted paper must be presented by at least one of its authors at the workshop',
+  ]
+
+  const criteria = [
+    'Fit with the workshop topics',
+    'Whether the paper can contribute to the discussion sessions',
+    'The quality of the writing',
+  ]
+
+  const outcomes = [
+    'Springer proceedings for the accepted papers, similar to the SynIRgy 2026 edition',
+    'A community research roadmap, started in the breakout sessions',
+    'An open, shared list of simulators, synthetic datasets, and evaluation resources',
+    'A short report on the discussions, open challenges, and next steps',
   ]
 
   return (
-    <div className="relative">
+    <>
       <PageBanner
         title="Call for Papers"
-        description="Submit your research on simulation and synthetic data for Information Retrieval"
+        description="Submit your research on simulation and synthetic data for web-scale information access."
       />
 
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading subtitle="Join us in advancing the field of simulation and synthetic data for IR">
-            Workshop Scope
-          </SectionHeading>
+      <section className="page-section">
+        <SectionHeading>Workshop Scope</SectionHeading>
+        <div className="space-y-4">
+          <p>
+            Web platforms change as people use them. Users react to what is recommended, systems learn from
+            those reactions, and side effects such as filter bubbles, popularity bias, and uneven exposure build
+            up over time. Fixed test collections show only a snapshot of this process. Simulation lets
+            researchers follow these dynamics in a setting they control and can repeat, and large language
+            models have made it much easier to create synthetic users, interactions, reviews, and dialogues.
+          </p>
+          <p>
+            This progress brings open questions. How closely do LLM-generated users resemble real ones? For
+            which evaluation purposes is synthetic data appropriate? How should privacy, data utility, and
+            fairness be balanced against each other? Which ethical risks come with generated data? And how can
+            simulation-based results be repeated and compared across studies?
+          </p>
+        </div>
+      </section>
 
-          <AnimatedCard>
-            <div className="space-y-4">
-              <p className="text-muted-foreground">
-                The SynIRgy workshop brings together researchers from information access systems, including search, 
-                LLMs, recommender systems, and related fields. Our goal is to foster community building, establish 
-                a shared vocabulary, and identify key challenges and open problems in synthetic data and simulation 
-                for Information Retrieval.
-              </p>
-              <p className="text-muted-foreground">
-                This half-day in-person event is designed to combine high-quality research presentations with 
-                informal networking and focused discussions. The workshop will explore key research questions 
-                around user behavior modeling, synthetic data generation, algorithm evaluation, bias and ethics, 
-                and reproducibility infrastructure.
-              </p>
-              <p className="text-muted-foreground">
-                As a result, a short report will summarize the discussions and outline future directions. These 
-                outcomes will lay the foundation for later editions and potential activities such as tutorials, 
-                survey papers, or a special journal issue.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-4">
-                <Badge variant="outline">Community Building</Badge>
-                <Badge variant="outline">Research Collaboration</Badge>
-                <Badge variant="outline">Future Directions</Badge>
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading subtitle="The workshop covers, without being limited to:">Topics of Interest</SectionHeading>
+        <dl className="space-y-4">
+          {topics.map((topic) => (
+            <div key={topic.title}>
+              <dt className="font-medium">{topic.title}</dt>
+              <dd className="text-muted-foreground">{topic.description}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading subtitle="The workshop fits most closely with three tracks of The Web Conference 2027:">Fit with The Web Conference</SectionHeading>
+        <dl className="space-y-4">
+          {tracks.map((track) => (
+            <div key={track.title}>
+              <dt className="font-medium">{track.title}</dt>
+              <dd className="text-muted-foreground">{track.description}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="mt-4">
+          Beyond these tracks, the workshop also gives neighboring web-oriented communities, such as user
+          modeling, social computing, and web mining, a place to meet around a common methodological topic.
+        </p>
+      </section>
+
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading>Submission Types</SectionHeading>
+        <div className="divide-y divide-border border-y border-border">
+          {submissionTypes.map((item) => (
+            <div key={item.type} className="py-3">
+              <div className="flex justify-between gap-4">
+                <h3 className="font-medium">{item.type}</h3>
+                {item.pages && <span className="shrink-0 text-sm text-muted-foreground">{item.pages}</span>}
               </div>
+              {item.description && <p className="text-sm text-muted-foreground">{item.description}</p>}
             </div>
-          </AnimatedCard>
+          ))}
         </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          The paper template and any remaining page limits will be confirmed with the submission link.
+        </p>
       </section>
 
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading subtitle="We welcome contributions on, but not limited to">
-            Topics of Interest
-          </SectionHeading>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {topics.map((topic, index) => (
-              <AnimatedCard
-                key={index}
-              >
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      <topic.icon className="h-6 w-6" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2">{topic.title}</h3>
-                      <p className="text-sm text-muted-foreground">{topic.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedCard>
-            ))}
-          </div>
-        </div>
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading>Submission Guidelines</SectionHeading>
+        <ul className="list-disc space-y-2 pl-5">
+          {guidelines.map((guideline) => (
+            <li key={guideline}>{guideline}</li>
+          ))}
+        </ul>
       </section>
 
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading>
-            Submission Types
-          </SectionHeading>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {submissionTypes.map((item, index) => (
-              <AnimatedCard key={index}>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-semibold text-lg">{item.type}</h3>
-                    <Badge>{item.pages}</Badge>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
-              </AnimatedCard>
-            ))}
-          </div>
-
-          <div className="mt-8 p-6 rounded-lg border border-border bg-card">
-            <p className="text-sm text-muted-foreground">
-              <strong>Note:</strong> Page limits exclude references. All submissions should follow the
-              Springer LNCS format.
-            </p>
-          </div>
-        </div>
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading>Review Process</SectionHeading>
+        <p>Each submission is reviewed double-blind by at least two experts. Reviewers assess:</p>
+        <ul className="mt-4 list-disc space-y-2 pl-5">
+          {criteria.map((criterion) => (
+            <li key={criterion}>{criterion}</li>
+          ))}
+        </ul>
       </section>
 
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading>
-            Submission Guidelines
-          </SectionHeading>
-
-          <AnimatedCard>
-            <ul className="space-y-4">
-              {guidelines.map((guideline, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">{guideline}</span>
-                </li>
-              ))}
-            </ul>
-          </AnimatedCard>
-
-          <AnimatedCard className="mt-6">
-            <div className="space-y-4">
-              <h3 className="font-semibold text-xl flex items-center gap-2">
-                <FileText className="h-5 w-5 text-primary" />
-                Review Process & Evaluation Criteria
-              </h3>
-              <p className="text-muted-foreground">
-                We follow a double-blind peer-review process. Each submission will be reviewed by at least two 
-                independent reviewers who are experts in the respective topic. Papers will be evaluated based on:
-              </p>
-              <ul className="space-y-2 text-muted-foreground ml-4">
-                <li>• <strong>Relevance:</strong> Focus on areas related to synthetic data, simulation methods, and IR</li>
-                <li>• <strong>Discussion potential:</strong> Ability to encourage interaction and provide foundation for workshop sessions</li>
-                <li>• <strong>Quality:</strong> Well-structured arguments, clear communication, and appropriate use of language</li>
-              </ul>
-              <p className="text-muted-foreground mt-4">
-                The workshop proceedings are available on <a href="https://link.springer.com/book/10.1007/978-3-032-21324-2" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Springer</a>.
-              </p>
-            </div>
-          </AnimatedCard>
-        </div>
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading>Outcomes</SectionHeading>
+        <ul className="list-disc space-y-2 pl-5">
+          {outcomes.map((outcome) => (
+            <li key={outcome}>{outcome}</li>
+          ))}
+        </ul>
+        <p className="mt-8 flex flex-wrap gap-5 font-medium">
+          <Link href="/submission" className="text-link">How to submit →</Link>
+          <Link href="/important-dates" className="text-link">Important dates →</Link>
+        </p>
       </section>
-
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
-        <div className="container relative z-10">
-          <div className="text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              <span className="text-gradient">Ready to Submit?</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Submit your research and be part of shaping the future of simulation and synthetic data in IR
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button asChild size="lg" className="glow-effect">
-                <Link href="/submission">
-                  <FileText className="mr-2 h-5 w-5" />
-                  Submission Guidelines
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/important-dates">
-                  View Important Dates
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    </>
   )
 }

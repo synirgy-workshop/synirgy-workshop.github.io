@@ -1,20 +1,15 @@
-'use client'
-
-import { User, Mail, Users, MapPin, Globe, GraduationCap, Twitter } from 'lucide-react'
-import { Linkedin } from 'lucide-react'
+import { Globe, GraduationCap, Linkedin, Twitter } from 'lucide-react'
 import Image from 'next/image'
 import PageBanner from '@/components/PageBanner'
 import SectionHeading from '@/components/SectionHeading'
-import AnimatedCard from '@/components/AnimatedCard'
-import { Badge } from '@/components/ui/badge'
 
 export default function Organizers() {
   const chairs = [
     {
       name: 'Manel Slokom',
-      affiliation: 'CWI (Human-Centered Data Analytics Group)',
+      affiliation: 'Hotelschool The Hague',
       location: 'The Hague, Netherlands',
-      email: 'manel.slokom@cwi.nl',
+      email: 'manel.slokom@live.fr',
       role: 'Workshop Chair',
       image: '../organizers/manel.png',
       links: {
@@ -38,19 +33,6 @@ export default function Organizers() {
       }
     },
     {
-      name: 'Andrea Barraza-Urbina',
-      affiliation: 'Grubhub',
-      location: 'Paphos, Cyprus',
-      email: 'apbarraza@gmail.com',
-      role: 'Workshop Chair',
-      image: '../organizers/andrea.jpeg',
-      links: {
-        website: 'https://apbarraza.com/',
-        linkedin: 'https://www.linkedin.com/in/andrea-barraza/',
-        scholar: 'https://scholar.google.com/citations?user=z6pLrvYAAAAJ&hl'
-      }
-    },
-    {
       name: 'Mayank Singh',
       affiliation: 'advicehub.ai',
       location: 'Toronto, Canada',
@@ -62,123 +44,111 @@ export default function Organizers() {
         website: 'https://singhmayank.com/',
         linkedin: 'https://www.linkedin.com/in/mayanksingh09/'
       }
+    },
+    {
+      name: 'Andrea Barraza-Urbina',
+      affiliation: 'Independent Researcher',
+      location: 'Paphos, Cyprus',
+      email: 'apbarraza@gmail.com',
+      role: 'Workshop Chair',
+      image: '../organizers/andrea.jpeg',
+      links: {
+        website: 'https://apbarraza.com/',
+        linkedin: 'https://www.linkedin.com/in/andrea-barraza/',
+        scholar: 'https://scholar.google.com/citations?user=z6pLrvYAAAAJ&hl'
+      }
+    },
+    {
+      name: 'Thierno Kante',
+      affiliation: 'EDICIA',
+      location: 'Nantes, France',
+      email: 'thierno.kante@edicia.fr',
+      role: 'Workshop Chair',
+      links: {}
     }
   ]
 
+  const linkTypes = [
+    { key: 'website', label: 'Website', icon: Globe },
+    { key: 'scholar', label: 'Google Scholar', icon: GraduationCap },
+    { key: 'linkedin', label: 'LinkedIn', icon: Linkedin },
+    { key: 'twitter', label: 'Twitter/X', icon: Twitter },
+  ] as const
+
   const pc = [
-    'Anas Buhyah',
-    'Dominik Kowald',
-    'Roger Zhe Li',
-    'Yuhong Liu',
-    'Savvina Daniil',
-    'Linus W. Dietz'
+    { name: 'Krisztian Balog', affiliation: 'University of Stavanger, Norway' },
+    { name: 'Nolwenn Bernard', affiliation: 'University of Stavanger, Norway' },
+    { name: 'Ivan Cantador', affiliation: 'Universidad Autónoma de Madrid, Spain' },
+    { name: 'Masoud Mansoury', affiliation: 'TU Delft, The Netherlands' },
+    { name: 'Savvina Daniil', affiliation: 'Centrum Wiskunde & Informatica, The Netherlands' },
+    { name: 'Linus W. Dietz', affiliation: "King's College London, United Kingdom" },
+    { name: 'Marcel Hauck', affiliation: 'Mainz University of Applied Sciences, Germany' },
+    { name: 'Sole Pera', affiliation: 'TU Delft, The Netherlands' },
+    { name: 'Roger Zhe Li', affiliation: 'Huawei Ireland Research Center, Ireland' },
+    { name: 'Nynke Krol', affiliation: 'Official Statistics, The Netherlands' },
+    { name: 'Laurens Naudts', affiliation: 'Institute for Information Law, University of Amsterdam' },
+    { name: 'Max van Drunen', affiliation: 'Institute for Information Law, University of Amsterdam' },
   ]
 
   return (
-    <div className="relative">
-      <PageBanner title="Organizers" description="Workshop chairs and program committee members" />
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading>Workshop Chairs</SectionHeading>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {chairs.map((chair, index) => (
-              <AnimatedCard key={index} delay={0.1 * (index + 1)}>
-                <div className="flex flex-col items-center text-center space-y-4">
-                  {chair.image ? (
-                    <Image
-                      src={chair.image}
-                      alt={chair.name}
-                      width={96}
-                      height={96}
-                      className="rounded-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                      <User className="h-12 w-12 text-primary/50" />
-                    </div>
-                  )}
-                  <div>
-                    <Badge className="mb-2">{chair.role}</Badge>
-                    <h3 className="text-xl font-bold mb-1">{chair.name}</h3>
-                    <p className="text-muted-foreground mb-2">{chair.affiliation}</p>
-                    <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground mb-3">
-                      <MapPin className="h-3 w-3" />
-                      <span>{chair.location}</span>
-                    </div>
-                    <a href={`mailto:${chair.email}`} className="text-sm text-primary hover:underline inline-flex items-center gap-1 mb-3">
-                      <Mail className="h-3 w-3" />
-                      {chair.email}
-                    </a>
-                    <div className="flex items-center justify-center gap-3 mt-3">
-                      {chair.links.twitter && (
-                        <a
-                          href={chair.links.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label="Twitter/X"
-                        >
-                          <Twitter className="h-5 w-5" />
-                        </a>
-                      )}
-                      {chair.links.website && (
-                        <a
-                          href={chair.links.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label="Website"
-                        >
-                          <Globe className="h-5 w-5" />
-                        </a>
-                      )}
-                      {chair.links.linkedin && (
-                        <a
-                          href={chair.links.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label="LinkedIn"
-                        >
-                          <Linkedin className="h-5 w-5" />
-                        </a>
-                      )}
-                      {chair.links.scholar && (
-                        <a
-                          href={chair.links.scholar}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label="Google Scholar"
-                        >
-                          <GraduationCap className="h-5 w-5" />
-                        </a>
-                      )}
-                    </div>
+    <>
+      <PageBanner title="Organizers" description="Workshop chairs and program committee members." />
+      <section className="page-section">
+        <SectionHeading subtitle="The main point of contact is Manel Slokom.">Workshop Chairs</SectionHeading>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {chairs.map((chair) => {
+            const links: Partial<Record<(typeof linkTypes)[number]['key'], string>> = chair.links
+            return (
+              <div key={chair.name} className="flex gap-4">
+                {chair.image ? (
+                  <Image
+                    src={chair.image}
+                    alt={chair.name}
+                    width={72}
+                    height={72}
+                    className="h-[72px] w-[72px] shrink-0 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full bg-muted font-medium text-muted-foreground">
+                    {chair.name.split(' ').map((part) => part[0]).join('')}
+                  </div>
+                )}
+                <div className="min-w-0 text-sm">
+                  <h3 className="text-base">{chair.name}</h3>
+                  <p className="text-muted-foreground">{chair.affiliation}</p>
+                  <p className="text-muted-foreground">{chair.location}</p>
+                  <a href={`mailto:${chair.email}`} className="text-link break-words">{chair.email}</a>
+                  <div className="mt-2 flex gap-3">
+                    {linkTypes.map(({ key, label, icon: Icon }) => links[key] && (
+                      <a
+                        key={key}
+                        href={links[key]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground transition-colors hover:text-foreground"
+                        aria-label={`${chair.name} on ${label}`}
+                      >
+                        <Icon className="h-4 w-4" />
+                      </a>
+                    ))}
                   </div>
                 </div>
-              </AnimatedCard>
-            ))}
-          </div>
+              </div>
+            )
+          })}
         </div>
       </section>
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading>Program Committee</SectionHeading>
-          <AnimatedCard>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {pc.map((member, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <User className="h-4 w-4 text-primary/50" />
-                  </div>
-                  <span className="font-medium">{member}</span>
-                </li>
-              ))}
-            </ul>
-          </AnimatedCard>
-        </div>
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading subtitle="Confirmed members so far.">Program Committee</SectionHeading>
+        <ul className="grid gap-4 sm:grid-cols-2">
+          {pc.map((member) => (
+            <li key={member.name}>
+              {member.name}
+              <span className="block text-sm text-muted-foreground">{member.affiliation}</span>
+            </li>
+          ))}
+        </ul>
       </section>
-    </div>
+    </>
   )
 }
