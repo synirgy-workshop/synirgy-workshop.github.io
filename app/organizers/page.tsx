@@ -34,9 +34,9 @@ export default function Organizers() {
     },
     {
       name: 'Mayank Singh',
-      affiliation: 'advicehub.ai',
+      affiliation: '1Dial',
       location: 'Toronto, Canada',
-      email: 'mayanksingh@advicehub.ai',
+      email: 'mayank@1dial.ai',
       role: 'Workshop Chair',
       image: '/organizers/mayank.jpeg',
       links: {
@@ -75,20 +75,6 @@ export default function Organizers() {
     { key: 'twitter', label: 'Twitter/X', icon: Twitter },
   ] as const
 
-  const pc = [
-    { name: 'Krisztian Balog', affiliation: 'University of Stavanger, Norway' },
-    { name: 'Nolwenn Bernard', affiliation: 'University of Stavanger, Norway' },
-    { name: 'Ivan Cantador', affiliation: 'Universidad Autónoma de Madrid, Spain' },
-    { name: 'Masoud Mansoury', affiliation: 'TU Delft, The Netherlands' },
-    { name: 'Savvina Daniil', affiliation: 'Centrum Wiskunde & Informatica, The Netherlands' },
-    { name: 'Linus W. Dietz', affiliation: "King's College London, United Kingdom" },
-    { name: 'Marcel Hauck', affiliation: 'Mainz University of Applied Sciences, Germany' },
-    { name: 'Sole Pera', affiliation: 'TU Delft, The Netherlands' },
-    { name: 'Roger Zhe Li', affiliation: 'Huawei Ireland Research Center, Ireland' },
-    { name: 'Nynke Krol', affiliation: 'Official Statistics, The Netherlands' },
-    { name: 'Laurens Naudts', affiliation: 'Institute for Information Law, University of Amsterdam' },
-    { name: 'Max van Drunen', affiliation: 'Institute for Information Law, University of Amsterdam' },
-  ]
 
   return (
     <>
@@ -139,15 +125,8 @@ export default function Organizers() {
         </div>
       </section>
       <section className="page-section pt-0 md:pt-0">
-        <SectionHeading subtitle="Confirmed members so far.">Program Committee</SectionHeading>
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {pc.map((member) => (
-            <li key={member.name}>
-              {member.name}
-              <span className="block text-sm text-muted-foreground">{member.affiliation}</span>
-            </li>
-          ))}
-        </ul>
+        <SectionHeading>Program Committee</SectionHeading>
+        <p className="text-muted-foreground">TBA</p>
       </section>
     </>
   )
