@@ -1,95 +1,64 @@
-'use client'
-
-import { FileEdit, FileCheck, Upload, Search, Presentation, AlertCircle } from 'lucide-react'
+import Link from 'next/link'
 import PageBanner from '@/components/PageBanner'
 import SectionHeading from '@/components/SectionHeading'
-import AnimatedCard from '@/components/AnimatedCard'
-import GridOverlay from '@/components/GridOverlay'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import { CONFERENCE_NAME } from '@/lib/conference'
 
 export default function Submission() {
   const steps = [
-    { number: 1, title: 'Prepare Your Paper', description: 'Write your paper following Springer LNCS format guidelines', icon: FileEdit },
-    { number: 2, title: 'Format & Review', description: 'Ensure formatting requirements and page limits are met', icon: FileCheck },
-    { number: 3, title: 'Submit via System', description: 'Upload PDF through the workshop submission portal (double-blind)', icon: Upload },
-    { number: 4, title: 'Double-Blind Review', description: 'Papers reviewed by at least two independent expert reviewers', icon: Search },
-    { number: 5, title: 'Present at Workshop', description: 'Oral presentations or poster session at the half-day workshop', icon: Presentation }
+    { title: 'Prepare your paper', description: 'Write your paper using the paper template, which will be announced with the submission link' },
+    { title: 'Check the format', description: 'Ensure formatting requirements and page limits are met' },
+    { title: 'Submit', description: 'Upload your PDF through the workshop submission portal (double-blind)' },
+    { title: 'Review', description: 'Papers are reviewed by at least two experts' },
+    { title: 'Present at the workshop', description: 'Short talks, a poster session, and group discussion at the half-day workshop' },
+  ]
+
+  const requirements = [
+    <>Accepted paper types and page limits are listed in the <Link href="/call-for-papers" className="text-link">call for papers</Link></>,
+    'Papers must be submitted in PDF format',
+    'All submissions must be in English and anonymized for double-blind review',
+    `At least one author of accepted papers must register for ${CONFERENCE_NAME} and the workshop`,
+    'Each accepted paper must be presented by at least one of its authors at the workshop',
+    'All submissions must represent original work. Plagiarism and duplicate submissions are strictly prohibited and will result in rejection',
+    'Accepted papers will appear in the Springer proceedings',
   ]
 
   return (
-    <div className="relative">
-      <PageBanner title="Submission Guidelines" description="How to prepare and submit your paper to SynIRgy Workshop" />
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading>Submission Process</SectionHeading>
-          <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 hidden md:block" />
-            <div className="space-y-12">
-              {steps.map((step, index) => {
-                const Icon = step.icon
-                const isEven = index % 2 === 0
-                return (
-                  <div key={index} className="relative flex items-center">
-                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary border-4 border-background flex items-center justify-center text-primary-foreground font-bold hidden md:flex z-10">
-                      {step.number}
-                    </div>
-                    <div className={`md:w-5/12 ${isEven ? '' : 'md:ml-auto'}`}>
-                      <AnimatedCard>
-                        <div className="flex items-start gap-4">
-                          <div className="p-3 rounded-lg bg-primary/10 text-primary md:hidden">
-                            <Icon className="h-6 w-6" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="md:hidden text-primary font-bold mb-2">Step {step.number}</div>
-                            <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                            <p className="text-muted-foreground">{step.description}</p>
-                          </div>
-                        </div>
-                      </AnimatedCard>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
+    <>
+      <PageBanner
+        title="Submission"
+        description="How to prepare and submit your paper to the SynIRgy Workshop."
+      />
+
+      <section className="page-section">
+        <div className="rounded-lg bg-muted p-5">
+          <h2 className="text-base">Submission link</h2>
+          <p className="mt-1 text-muted-foreground">
+            The link will be posted here once it is available. Papers are due by{' '}
+            <Link href="/important-dates" className="text-link">4 January 2027</Link>.
+          </p>
         </div>
       </section>
-      <section className="relative py-24">
-        <div className="container relative z-10">
-          <SectionHeading>Formatting Requirements</SectionHeading>
-          <AnimatedCard>
-            <ul className="space-y-3 text-muted-foreground">
-              <li>• All submissions must follow the Springer LNCS format</li>
-              <li>• Full research papers: 12 pages (excluding references)</li>
-              <li>• Short papers & work-in-progress: 4-6 pages (excluding references)</li>
-              <li>• Demo papers: 5 pages (excluding references)</li>
-              <li>• Negative results papers: 6-8 pages (excluding references)</li>
-              <li>• Position papers (opinion, methodology, or survey): 4-6 pages (excluding references)</li>
-              <li>• Papers must be submitted in PDF format</li>
-              <li>• All submissions must be in English and anonymized for double-blind review</li>
-              <li>• At least one author of accepted papers must register for ECIR 2026 and the workshop</li>
-              <li>• Each accepted paper must be presented by at least one of its authors at the workshop</li>
-            </ul>
-          </AnimatedCard>
-          <div className="mt-8 p-6 rounded-xl border border-primary bg-primary/5">
-            <div className="flex items-start gap-4">
-              <AlertCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Ethics & Plagiarism</h4>
-                <p className="text-sm text-muted-foreground">All submissions must represent original work. Plagiarism and duplicate submissions are strictly prohibited and will result in rejection.</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 text-center">
-            <Button asChild size="lg" className="glow-effect">
-              <Link href="https://easychair.org/conferences?conf=synirgy2026" target="_blank" rel="noopener noreferrer">
-                Submit Your Paper on EasyChair
-              </Link>
-            </Button>
-          </div>
-        </div>
+
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading>Process</SectionHeading>
+        <ol className="list-decimal space-y-3 pl-5">
+          {steps.map((step) => (
+            <li key={step.title}>
+              <span className="font-medium">{step.title}.</span>{' '}
+              <span className="text-muted-foreground">{step.description}.</span>
+            </li>
+          ))}
+        </ol>
       </section>
-    </div>
+
+      <section className="page-section pt-0 md:pt-0">
+        <SectionHeading>Requirements</SectionHeading>
+        <ul className="list-disc space-y-2 pl-5">
+          {requirements.map((requirement, index) => (
+            <li key={index}>{requirement}</li>
+          ))}
+        </ul>
+      </section>
+    </>
   )
 }

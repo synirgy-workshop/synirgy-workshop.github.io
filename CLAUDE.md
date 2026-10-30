@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 static website for the SynIRgy Workshop at ECIR 2026, built with TypeScript and deployed to GitHub Pages. The site uses the Next.js App Router with static export (`output: 'export'`) to generate a completely static site.
+This is a Next.js 15 static website for the SynIRgy Workshop at WWW 2027, built with TypeScript and deployed to GitHub Pages. The site uses the Next.js App Router with static export (`output: 'export'`) to generate a completely static site.
 
 ## Development Commands
 
@@ -68,12 +68,12 @@ All pages follow the App Router convention at `app/[page-name]/page.tsx`:
 - `/` - Home
 - `/call-for-papers/` - Submission topics and guidelines
 - `/important-dates/` - Key deadlines
-- `/program/` - Workshop schedule
-- `/speakers/` - Keynote speakers
+- `/program/` - Tentative workshop schedule
+- `/speakers/` - Keynote speakers (not in nav until announced)
 - `/organizers/` - Workshop chairs and committee
 - `/submission/` - Detailed submission process
-- `/accepted-papers/` - Accepted papers list
-- `/venue/` - Location and contact info
+- `/accepted-papers/` - Accepted papers list (not in nav until announced)
+- `/2026/` - Archive of the ECIR 2026 edition (keynote, program, papers)
 
 ### Navigation Updates
 

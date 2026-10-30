@@ -1,6 +1,6 @@
 # SynIRgy Workshop Website
 
-Website for the SynIRgy Workshop at ECIR 2026.
+Website for the SynIRgy Workshop at WWW 2027.
 
 ## Overview
 
@@ -16,7 +16,7 @@ This is a Next.js website built with TypeScript for hosting on GitHub Pages. The
 - **Organizers**: Workshop chairs and program committee
 - **Submission**: Detailed submission guidelines
 - **Accepted Papers**: List of accepted papers
-- **Venue & Contact**: Location and contact information
+- **2026 Edition**: Archive of the ECIR 2026 keynote, program, and papers
 
 ## Getting Started
 
@@ -118,4 +118,4 @@ This project is open source and available under the MIT License.
 
 ## Contact
 
-For questions about the workshop, please refer to the [Venue & Contact](/venue) page.
+For questions about the workshop, please email synirgy@outlook.com.
