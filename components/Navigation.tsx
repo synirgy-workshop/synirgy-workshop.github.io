@@ -23,20 +23,21 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border bg-background">
-      <div className="container flex h-14 items-center justify-between">
-        <Link href="/" className="font-semibold">
-          SynIRgy
+    <nav className="site-navigation sticky top-0 z-50 w-full border-b border-border bg-background">
+      <div className="wide-content flex h-20 items-center justify-between">
+        <Link href="/" className="brand-mark">
+          <span className="brand-symbol" aria-hidden="true">⁙</span> SynIRgy
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
+              aria-current={pathname === item.href ? 'page' : undefined}
               className={cn(
-                'text-sm transition-colors hover:text-foreground',
+                'nav-link text-sm transition-colors hover:text-foreground',
                 pathname === item.href ? 'font-medium text-foreground' : 'text-muted-foreground'
               )}
             >
@@ -61,6 +62,7 @@ const Navigation = () => {
                   <Link
                     key={item.href}
                     href={item.href}
+                    aria-current={pathname === item.href ? 'page' : undefined}
                     onClick={() => setIsOpen(false)}
                     className={cn(
                       'rounded-md px-3 py-2 transition-colors hover:bg-muted',

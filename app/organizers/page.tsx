@@ -11,7 +11,7 @@ export default function Organizers() {
       location: 'The Hague, Netherlands',
       email: 'manel.slokom@live.fr',
       role: 'Workshop Chair',
-      image: '../organizers/manel.png',
+      image: '/organizers/manel.png',
       links: {
         twitter: 'https://x.com/manelslokom',
         linkedin: 'https://www.linkedin.com/in/manel-slokom-a9b36779/',
@@ -24,7 +24,7 @@ export default function Organizers() {
       location: 'Madrid, Spain',
       email: 'alejandro.bellogin@uam.es',
       role: 'Workshop Chair',
-      image: '../organizers/alejandro.jpeg',
+      image: '/organizers/alejandro.jpeg',
       links: {
         twitter: 'https://x.com/abellogin',
         website: 'https://abellogin.github.io/',
@@ -38,7 +38,7 @@ export default function Organizers() {
       location: 'Toronto, Canada',
       email: 'mayanksingh@advicehub.ai',
       role: 'Workshop Chair',
-      image: '../organizers/mayank.jpeg',
+      image: '/organizers/mayank.jpeg',
       links: {
         twitter: 'https://x.com/mayansingh09',
         website: 'https://singhmayank.com/',
@@ -51,7 +51,7 @@ export default function Organizers() {
       location: 'Paphos, Cyprus',
       email: 'apbarraza@gmail.com',
       role: 'Workshop Chair',
-      image: '../organizers/andrea.jpeg',
+      image: '/organizers/andrea.jpeg',
       links: {
         website: 'https://apbarraza.com/',
         linkedin: 'https://www.linkedin.com/in/andrea-barraza/',
