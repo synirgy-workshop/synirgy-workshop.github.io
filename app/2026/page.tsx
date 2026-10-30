@@ -67,7 +67,7 @@ export default function Edition2026() {
         <SectionHeading>Keynote</SectionHeading>
         <div className="flex items-center gap-4">
           <Image
-            src="../speakers/david-zibriczky.png"
+            src="/speakers/david-zibriczky.png"
             alt="Dr. Dávid Zibriczky"
             width={72}
             height={72}

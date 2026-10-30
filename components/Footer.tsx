@@ -2,8 +2,8 @@ import { CONFERENCE_NAME, CONFERENCE_URL } from '@/lib/conference'
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border">
-      <div className="container flex flex-col gap-2 py-8 text-sm text-muted-foreground md:flex-row md:justify-between">
+    <footer className="site-footer border-t border-border">
+      <div className="wide-content flex flex-col gap-2 py-8 text-sm text-muted-foreground md:flex-row md:justify-between">
         <p>SynIRgy: Simulation and Synthetic Data for Web-Scale Information Access</p>
         <p>
           Part of{' '}
